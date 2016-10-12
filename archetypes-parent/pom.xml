@@ -1,0 +1,35 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>walkingdevs.maven</groupId>
+        <artifactId>parent</artifactId>
+        <version>1</version>
+    </parent>
+
+    <artifactId>archetypes-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>${archetype-packaging.v}</version>
+            </extension>
+        </extensions>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-archetype-plugin</artifactId>
+                <version>${archetype-pl.v}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <archetype-packaging.v>2.4</archetype-packaging.v>
+        <archetype-pl.v>2.4</archetype-pl.v>
+    </properties>
+</project>

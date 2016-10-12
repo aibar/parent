@@ -1,0 +1,224 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>walkingdevs.maven</groupId>
+    <artifactId>parent</artifactId>
+    <version>1</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>plugins-parent</module>
+        <module>archetypes-parent</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.v}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Maven plugins -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${clean.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${dependency.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${resources.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${install.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${compiler.pl.v}</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${surefire.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${assembly.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${jar.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${war.pl.v}</version>
+                    <configuration>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${shade.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec.pl.v}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${deploy.pl.v}</version>
+                </plugin>
+
+                <!-- Others -->
+                <plugin>
+                    <groupId>org.zeroturnaround</groupId>
+                    <artifactId>jrebel-maven-plugin</artifactId>
+                    <version>${jrebel.pl.v}</version>
+                    <executions>
+                        <execution>
+                            <id>generate-rebel-xml</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>walkingdevs.jrebel</groupId>
+                    <artifactId>rebelator</artifactId>
+                    <version>${rebelator.v}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>junit</id>
+            <activation>
+                <file>
+                    <exists>src/test/java</exists>
+                </file>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <family>linux</family>
+                </os>
+            </activation>
+            <properties>
+                <lib-extension>so</lib-extension>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <properties>
+                <lib-extension>dylib</lib-extension>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <lib-extension>dll</lib-extension>
+            </properties>
+        </profile>
+    </profiles>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <junit.v>4.12</junit.v>
+
+        <jrebel.pl.v>1.1.6</jrebel.pl.v>
+        <rebelator.v>1</rebelator.v>
+
+        <!-- Maven plugins -->
+        <compiler.pl.v>3.5.1</compiler.pl.v>
+        <clean.pl.v>3.0.0</clean.pl.v>
+        <dependency.pl.v>2.10</dependency.pl.v>
+        <install.pl.v>2.5.2</install.pl.v>
+        <resources.pl.v>3.0.1</resources.pl.v>
+        <surefire.pl.v>2.19.1</surefire.pl.v>
+        <assembly.pl.v>2.6</assembly.pl.v>
+        <jar.pl.v>3.0.2</jar.pl.v>
+        <war.pl.v>3.0.0</war.pl.v>
+        <shade.pl.v>2.4.3</shade.pl.v>
+        <exec.pl.v>1.5.0</exec.pl.v>
+        <deploy.pl.v>2.8.2</deploy.pl.v>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>bintray</id>
+            <url>http://dl.bintray.com/walkingdevs/mvn</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <name>walkingdevs</name>
+            <url>https://api.bintray.com/maven/walkingdevs/mvn/${project.artifactId}/;publish=1</url>
+        </repository>
+    </distributionManagement>
+</project>
