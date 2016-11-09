@@ -14,13 +14,13 @@
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>${maven-plugin-api.v}</version>
+            <version>${maven-plugin-api-version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
-            <version>${maven-plugin-annotations.v}</version>
+            <version>${maven-plugin-annotations-version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -30,7 +30,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>${maven-plugin-pl.v}</version>
+                <version>${maven-plugin-plugin-version}</version>
                 <configuration>
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
                 </configuration>
@@ -48,8 +48,8 @@
     </build>
 
     <properties>
-        <maven-plugin-api.v>2.0</maven-plugin-api.v>
-        <maven-plugin-pl.v>3.5</maven-plugin-pl.v>
-        <maven-plugin-annotations.v>${maven-plugin-pl.v}</maven-plugin-annotations.v>
+        <maven-plugin-api-version>2.0</maven-plugin-api-version>
+        <maven-plugin-plugin-version>3.5</maven-plugin-plugin-version>
+        <maven-plugin-annotations-version>${maven-plugin-plugin-version}</maven-plugin-annotations-version>
     </properties>
 </project>
