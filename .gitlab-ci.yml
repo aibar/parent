@@ -1,0 +1,7 @@
+image: registry.gitlab.com/walkingdevs/mvn:3.3.9
+
+deploy-to-bintray:
+  script:
+    - mvn deploy
+  only:
+    - master
