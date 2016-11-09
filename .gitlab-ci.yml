@@ -1,7 +1,9 @@
-image: registry.gitlab.com/walkingdevs/mvn:3.3.9
-
 deploy-to-bintray:
+  image: docker
+  services:
+  - docker:dind
   script:
-    - mvn deploy
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker run --rm -it registry.gitlab.com/walkingdevs/mvn:3.3.9 mvn deploy
   only:
     - master
