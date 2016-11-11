@@ -3,7 +3,7 @@
 
     <groupId>walkingdevs.maven</groupId>
     <artifactId>parent</artifactId>
-    <version>1</version>
+    <version>2</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.v}</version>
+            <version>${junit-version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -185,7 +185,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <junit.v>4.12</junit.v>
+        <junit-version>4.12</junit-version>
 
         <jrebel-plugin-version>1.1.6</jrebel-plugin-version>
         <rebelator-version>1</rebelator-version>
