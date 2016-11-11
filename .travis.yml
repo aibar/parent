@@ -1,4 +1,4 @@
 language: java
 
-deploy-to-bintray:
+script:
   - mvn deploy --settings settings.xml -DBintrayKey=$BintrayKey
