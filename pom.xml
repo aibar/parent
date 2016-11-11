@@ -130,22 +130,6 @@
 
     <profiles>
         <profile>
-            <id>junit</id>
-            <activation>
-                <file>
-                    <exists>src/test/java</exists>
-                </file>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <profile>
             <id>linux</id>
             <activation>
                 <os>
