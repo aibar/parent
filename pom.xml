@@ -3,7 +3,7 @@
 
     <groupId>walkingdevs.maven</groupId>
     <artifactId>parent</artifactId>
-    <version>3</version>
+    <version>4</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -83,12 +83,6 @@
                     <configuration>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-shade-plugin</artifactId>
-                    <version>${shade-plugin-version}</version>
                 </plugin>
 
                 <plugin>
@@ -198,7 +192,7 @@
         <install-plugin-version>2.5.2</install-plugin-version>
         <resources-plugin-version>3.0.1</resources-plugin-version>
         <surefire-plugin-version>2.19.1</surefire-plugin-version>
-        <assembly-plugin-version>2.6</assembly-plugin-version>
+        <assembly-plugin-version>3.0.0</assembly-plugin-version>
         <jar-plugin-version>3.0.2</jar-plugin-version>
         <war-plugin-version>3.0.0</war-plugin-version>
         <shade-plugin-version>2.4.3</shade-plugin-version>
