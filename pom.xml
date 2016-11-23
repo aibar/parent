@@ -3,7 +3,7 @@
 
     <groupId>walkingdevs.maven</groupId>
     <artifactId>parent</artifactId>
-    <version>2</version>
+    <version>3</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -120,6 +120,23 @@
                 </plugin>
 
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${shade-plugin-version}</version>
+                    <configuration>
+                        <createDependencyReducedPom>false</createDependencyReducedPom>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
                     <groupId>walkingdevs.jrebel</groupId>
                     <artifactId>rebelator</artifactId>
                     <version>${rebelator-version}</version>
@@ -175,7 +192,7 @@
         <rebelator-version>1</rebelator-version>
 
         <!-- Maven plugins -->
-        <compiler-plugin-version>3.5.1</compiler-plugin-version>
+        <compiler-plugin-version>3.6.0</compiler-plugin-version>
         <clean-plugin-version>3.0.0</clean-plugin-version>
         <dependency-plugin-version>2.10</dependency-plugin-version>
         <install-plugin-version>2.5.2</install-plugin-version>
@@ -187,6 +204,7 @@
         <shade-plugin-version>2.4.3</shade-plugin-version>
         <exec-plugin-version>1.5.0</exec-plugin-version>
         <deploy-plugin-version>2.8.2</deploy-plugin-version>
+        <shade-plugin-version>2.4.3</shade-plugin-version>
     </properties>
 
     <repositories>

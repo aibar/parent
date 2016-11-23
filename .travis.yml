@@ -1,4 +1,4 @@
 language: java
 
 script:
-  - mvn deploy --settings settings.xml -DBintrayKey=$BintrayKey
+  - mvn deploy -s settings.xml -DBintrayKey=$BintrayKey
