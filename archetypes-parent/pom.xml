@@ -2,9 +2,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>walkingdevs.maven</groupId>
+        <groupId>walkingdevs</groupId>
         <artifactId>parent</artifactId>
-        <version>4</version>
+        <version>5</version>
     </parent>
 
     <artifactId>archetypes-parent</artifactId>
