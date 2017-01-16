@@ -1,4 +1,6 @@
 language: java
+jdk:
+  - oraclejdk8
 
 cache:
   directories:
@@ -6,6 +8,7 @@ cache:
 
 deploy:
   provider: script
-  script: mvn deploy -s settings.xml -DBintrayKey=$BintrayKey
+  script: mvn deploy -s settings.xml -DBintrayKey=$BintrayKey -B
   on:
+    branch: master
     tags: true
