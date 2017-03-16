@@ -7,7 +7,7 @@
     <parent>
         <groupId>walkingdevs.maven</groupId>
         <artifactId>parent</artifactId>
-        <version>6</version>
+        <version>7</version>
         <relativePath/>
     </parent>
 
