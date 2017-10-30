@@ -5,9 +5,9 @@
 ## Maven parent poms. Nothing special (yet)
 
     <parent>
-        <groupId>walkingdevs.maven</groupId>
+        <groupId>walkingdevs</groupId>
         <artifactId>parent</artifactId>
-        <version>8</version>
+        <version>9</version>
         <relativePath/>
     </parent>
 
