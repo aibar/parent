@@ -4,7 +4,7 @@
     <parent>
         <groupId>walkingdevs</groupId>
         <artifactId>parent</artifactId>
-        <version>9</version>
+        <version>10</version>
     </parent>
 
     <artifactId>archetypes-parent</artifactId>
@@ -27,9 +27,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <archetype-packaging-version>3.0.0</archetype-packaging-version>
-        <archetype-plugin-version>3.0.1</archetype-plugin-version>
-    </properties>
 </project>
