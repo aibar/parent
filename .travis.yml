@@ -5,10 +5,3 @@ jdk:
 cache:
   directories:
     - $HOME/.m2
-
-deploy:
-  provider: script
-  script: mvn deploy -s settings.xml -DBintrayKey=$BintrayKey -B
-  on:
-    branch: master
-    tags: true

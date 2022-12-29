@@ -1,18 +1,15 @@
 [![Build Status](https://travis-ci.org/walkingdevs/parent.svg?branch=master)](https://travis-ci.org/walkingdevs/parent)
 [![Download](https://api.bintray.com/packages/walkingdevs/mvn/parent/images/download.svg)](https://bintray.com/walkingdevs/mvn/parent/_latestVersion)
 
-## Maven parent poms. Nothing special (yet)
+## Maven parent poms
 
-    <parent>
-        <groupId>walkingdevs</groupId>
-        <artifactId>parent</artifactId>
-        <version>10</version>
-        <relativePath/>
-    </parent>
+`mvn clean install`
 
-    <repositories>
-        <repository>
-            <id>bintray</id>
-            <url>http://dl.bintray.com/walkingdevs/mvn</url>
-        </repository>
-    </repositories>
+````
+<parent>
+  <groupId>walkingdevs</groupId>
+  <artifactId>parent</artifactId>
+  <version>10</version>
+  <relativePath/>
+</parent>
+````

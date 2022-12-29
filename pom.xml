@@ -239,19 +239,4 @@
         <maven-plugin-plugin-version>3.5.2</maven-plugin-plugin-version>
         <maven-plugin-annotations-version>3.5.2</maven-plugin-annotations-version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>bintray</id>
-            <url>http://dl.bintray.com/walkingdevs/mvn</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>bintray</id>
-            <name>walkingdevs</name>
-            <url>https://api.bintray.com/maven/walkingdevs/mvn/${project.artifactId}/;publish=1</url>
-        </repository>
-    </distributionManagement>
 </project>
